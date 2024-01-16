@@ -22,6 +22,7 @@ const doc = new Docxtemplater(zip, {
     linebreaks: true,
 });
 
+// تبدیل تاریخ میلادی به شمسی
 const dateObject = new Date("2024-01-15T12:00:00");
 const options = { timeZone: 'Asia/Tehran', year: 'numeric', month: 'long', day: 'numeric' };
 const formattedDate = dateObject.toLocaleString('fa-IR', options);
