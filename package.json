@@ -1,7 +1,6 @@
 {
-  "dependencies": {
-    "docxtemplater": "^3.43.1",
-    "node-fetch": "^3.3.2",
-    "pizzip": "^3.1.4"
-  }
+    "dependencies": {
+        "docxtemplater": "^3.43.1",
+        "pizzip": "^3.1.4"
+    }
 }
