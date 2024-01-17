@@ -22,37 +22,62 @@ const doc = new Docxtemplater(zip, {
     linebreaks: true,
 });
 
+// Data
+const dataObject = {
+    "NetworkAreaName": "معاونت صدا",
+    "NetworkName": "شبکه جوان (صدا)",
+    "ReleaseDate": "2024-01-15T00:00:00",
+    "SenderPerson": {},
+    "ReceiverPerson": {},
+    "Transcript": [],
+    "content": "بیان مطلب بی اساس مجری و ایجاد مقایسه ایران با کشورهای دیگر از لحاظ تورم",
+    "SupervisorFullName": "آمنه سادات احمدی",
+    "start": "22:11:32.247",
+    "TopicStory": "<p>مجری(صادق علیخانی): یکی از دوستان من رفته بود به یه کشوری اسم اون کشورو نمیارم بحث سیاسی نشه، می‌گفتش من رفتم یه قهوه خوردم بعد مثلاً یه دلار دادم به اون صاحب کافه، می‌گفت این بنده خدا رنگ و روش پرید یه لحظه موندکه &nbsp;من باید چیکار کنم با این یه دلار... میگه رفت خلاصه تموم مغازه‌های اطراف پولاشونو جمع کرد تا باقیمانده پول اون یه فنجون قهوه رو بابت اون یه دلار رو بده</p>",
+    "Considerations": "<p>بیان چنین مطالبی در زمان نزدیک به انتخابات صحیح نیست و موجب مقایسه ایران و کشورهای دیگر از لحاظ تورم و گرانی می شود ضمن اینکه در سرچ اینترنتی و تحقیق از افراد ساکن در کشورهای دیگر چنین مطلبی یافت و اثبات نشد.</p>",
+    "PTitle": "موکب جوانان",
+    "MetaSubject": "تورم",
+    "Keyword": "تورم، فنجان قهوه، اغراق",
+    "PriorityTitle": "اغماض",
+    "FormatTypeTaggingName": "گفتار محور -کارشناسی ",
+    "LiveBroadcastModeName": "زنده",
+    "IndicatorLeve1Name": "محتوایی",
+    "ManagerDescription": "",
+    "end": "22:12:33.061",
+    "NoteEndTime": 79953.061,
+    "NotePriorityId": 4,
+    "FormatTypeTaggingId": 11363,
+    "LiveBroadcastModeId": 1,
+    "IndicatorLeve1": 1,
+    "isReviewd": true,
+    "AssigneeVar": "GeneralManager",
+    "PlaylistBodyURL": "https://mediamarketstreamer.iriborg.ir/timeshift/607/2024-01-15/playlist?contentType=jsonfile",
+    "CreateDate": "2024-01-17T09:40:11",
+    "Person1": 2,
+    "group": "comment",
+    "Supervisor": "09124218537",
+    "GeneralManager": "abolhasani",
+    "created": "2024-01-17T09:39:55",
+    "Playdate1": "2024-01-15T00:00:00",
+    "MomentaryReviewedProcessId": 1006438,
+    "BodyURL": "https://mediamarketstreamer.iriborg.ir/timeshift/607/2024-01-15/",
+    "Result3": "3",
+    "ModifiedRecordByUsr": "09122045764",
+    "ModifyDate": "2024-01-17T10:11:55",
+    "StreamNoteId": 1001053,
+    "isCheck": true,
+    "CreatedRecordByUsr": "09124218537"
+};
+
 // تبدیل تاریخ میلادی به شمسی
-const dateObject = new Date("2024-01-15T12:00:00");
+const dateObject = new Date(dataObject.ReleaseDate);
 const options = { timeZone: 'Asia/Tehran', year: 'numeric', month: 'long', day: 'numeric' };
 const formattedDate = dateObject.toLocaleString('fa-IR', options);
 
+dataObject.ReleaseDate = formattedDate;
 
 // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
-doc.render({
-    NetworkAreaName: "سیما", // this
-    NetworkName: "شبکه یک",
-    PTitle: "سلام صبح بخیر",
-    IndicatorLevelName: "اولویت دیگران به خود", // this
-    ReleaseDate: formattedDate,
-    start: "08:00:00",
-    end: "10:00:00",
-    content: "نا هماهنگی", // ?
-    LiveBroadcastModeName: "زنده",
-    FormatTypeTaggingName: "ترکیبی-ترکیبی ساده",
-    MetaSubject: "تاخیر", // this
-    Keyword: "مشکل پخش",
-    NotePriorityId: 1, // this
-    PriorityTitle: "مهم", // ?
-    // دریافت کننده
-    AssociationPrintedReportSRName_Title: "احمد رضا ناظری", // جناب دارد؟
-    AssociationPrintedReportSRPosition_Title: "مرکز پویش", // ؟؟
-    // ارسال کننده همان اقدام‌کننده می‌شه؟
-    AssociationPrintedReportSRName_Title: "فرهاد نجفی",
-    AssociationPrintedReportSRPosition_Title: "مدیر کل نظارت سیما",
-    TopicStory: "به گزارش خبرنگار سینمایی خبرگزاری فارس، هزینه بالای تولید فیلم در شرایط فعلی اقتصاد و فیلم‌سوزی سینما در سال‌های کرونا باعث شکست گیشه و هزاران میلیارد ضرر اهالی سینما شده بود. در حالی که این ورشکستگی گیشه هنر هفتم یکی از پیش‌بینی‌هایی بود که توسط اهالی سینما انجام می‌شد و وزیر ارشاد خبر از گیشه هزار میلیاردی سینمام تا پایان سال را داده بود،‌ مدیرعامل مؤسسه سینماشهر هاشم میرزاخانی گفت که « فروش سینما از ابتدای فروردین سال 1402 تا 24 دی به بیش از هزار میلیارد تومان رسید.» میزان این فروش بیش از فروش سینما در 3 سال گذشته بوده است.",
-    Considerations: "سال گذشته فروش سینمای ایران با وجود 50 فیلم اکران شده به 440 میلیارد تومان رسیده بود و سال قبل از آن نیز گیشه سینمای سال 1400 با اکران 44 فیلم تنها 158 میلیارد فروش داشت. در سینمای 1402 ایران تاکنون بیش از 23 میلیون و 472 هزار نفر در 650 هزار سئانس به تماشای فیلم‌ها در سینماها پرداخته‌اند. فروش فیلم‌های اکران شده در سال 1402 بیش از 955 میلیارد تومان با بیش از 22 میلیون و 551 هزار مخاطب بوده است. همچنین در آمار ارائه شده، فروش فیلم‌های سینمایی مانند «ملاقات خصوصی»، «بخارست»، «خط استوا» و... که در سال گذشته اکران شدند و اکران آن تا امسال ادامه داشت نیز محاسبه شده است که بیش از 33 میلیارد تومان مربوط به این فیلم‌ها هستند. همچنین میانگین قیمت بلیت نیز در سال 1402 حدود 42 هزار تومان به ازای هر نفر است.",
-});
+doc.render(dataObject);
 
 // Get the zip document and generate it as a nodebuffer
 const buf = doc.getZip().generate({
