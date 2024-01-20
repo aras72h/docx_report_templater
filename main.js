@@ -71,7 +71,7 @@ const dataObject = {
 
 // تبدیل تاریخ میلادی به شمسی
 const dateObject = new Date(dataObject.ReleaseDate);
-const options = { timeZone: 'Asia/Tehran', year: 'numeric', month: 'long', day: 'numeric' };
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
 const formattedDate = dateObject.toLocaleString('fa-IR', options);
 
 dataObject.ReleaseDate = formattedDate;
