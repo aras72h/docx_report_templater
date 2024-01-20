@@ -76,6 +76,16 @@ const formattedDate = dateObject.toLocaleString('fa-IR', options);
 
 dataObject.ReleaseDate = formattedDate;
 
+// حذف ثانیه و میلی‌ثانیه از زمان شروع و پایان
+// const e2p = s => s.replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+
+const startTime = dataObject.start.substring(0, 8);
+dataObject.start = startTime;
+
+const endTime = dataObject.end.substring(0, 8);
+dataObject.end = endTime;
+
+
 // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
 doc.render(dataObject);
 
