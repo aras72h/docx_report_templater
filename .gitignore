@@ -1,4 +1,8 @@
-/node_modules
+node_modules/
 output.docx
 data-real.json
 data.json
+input.pdf
+source/
+word_examples
+report_templates.zip

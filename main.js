@@ -28,7 +28,7 @@ const dataObject = {
     "NetworkName": "شبکه جوان (صدا)",
     "ReleaseDate": "2024-01-15T00:00:00",
     "SenderPerson": {},
-    "ReceiverPerson": {},
+    "ReceiverPerson": {   },
     "Transcript": [],
     "content": "بیان مطلب بی اساس مجری و ایجاد مقایسه ایران با کشورهای دیگر از لحاظ تورم",
     "SupervisorFullName": "آمنه سادات احمدی",
